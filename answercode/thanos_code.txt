@@ -1,0 +1,78 @@
+#include <bits/stdc++.h>
+using namespace std;
+int gcd(int x, int y)
+{
+    int rem = x % y;
+    if (rem == 0)
+        return y;
+    else
+
+        return gcd(y, rem);
+}
+int main()
+{
+    int n;
+    cin >> n;
+    int a[n], m[n];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    int mm = 1, f = 1;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> m[i];
+        mm = gcd(mm, m[i]);
+        f = f * m[i];
+    }
+    int lcm = (int)(f * 1.0 / mm * 1.0);
+    // cout << f << "---" << mm << endl;
+
+    sort(a, a + n);
+    sort(m, m + n);
+    int largePrime, index, x;
+    for (int i = n - 1; i >= 0; i--)
+    {
+        int ii = 2;
+        while (ii < m[i])
+        {
+            if (m[i] % ii != 0)
+            {
+                ii++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if (ii == m[i])
+        {
+            largePrime = m[i];
+            index = i;
+            break;
+        }
+    }
+    //cout << largePrime << "----" << a[index] << endl;
+    int i = 1;
+    while (i < 100)
+    {
+        int k = (largePrime * i) + a[index];
+        //cout << k << "  value is " << endl;
+        int flag = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (k % m[j] == a[j])
+            {
+                flag++;
+            }
+        }
+        if (flag == n)
+        {
+            x = k;
+            //cout << k << "0000" << endl;
+            break;
+        }
+        i++;
+    }
+    cout << x % lcm << endl;
+
+    return 1;
+}

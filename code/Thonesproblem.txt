@@ -1,0 +1,31 @@
+G. Thanos VS Power Stone
+Limits 1s, 512 MB
+
+Who doesn’t know about thanos the genius mad titan, who waste his life acquiring the infinity stones. He is close enough to discover the architectural value of power stone.
+
+He found that the architectural value of power stone is X such that X % M1 = A 1, X % M2 = A 2, … ,X % Mn = A n and X is minimum possible. He has the set of A, M but he can’t find out X himself. Can you help him find X?
+
+As the X can be very big find X Modulo LCM(M1, M2, …, Mn)
+
+Input
+Input starts with N representing the size of set A, M Next two lines contain N Integers each. Representing set A and M respectively.
+
+Constraints:
+
+1 ≤ N ≤ 105
+
+1 ≤ Mi ≤ 40
+
+N.B: Every constraints will be valid
+
+Output
+Print X Modulo LCM(M1, M2, …, Mn) denoting the Architectural value of power stone, If such X is not possible print “Infinity Stones are just a myth”
+
+Sample
+Input
+3
+1 2 4
+2 3 5
+
+Output
+29
