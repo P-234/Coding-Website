@@ -9,7 +9,7 @@
 
 3. Move the project folder to /opt/lampp/htdocs/
 
-4.Install g++, Java in Linux system 
+ 4.Install g++, Java in Linux system 
 To use compiler system of project 
 
 5. Run the project.
